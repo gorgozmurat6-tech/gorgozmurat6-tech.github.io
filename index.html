@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MacroForge - Knight Online Macro</title>
 
 <style>
+
+/* =========================
+   GENEL
+========================= */
 
 * {
     box-sizing: border-box;
@@ -19,23 +26,25 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #080b12;
     color: #ffffff;
     line-height: 1.6;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
-    background: #0d111c;
-    border-bottom: 1px solid #222a3a;
-    padding: 20px 8%;
+    background: #0c111c;
+    border-bottom: 1px solid #222b3b;
+    padding: 20px 7%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     position: relative;
-    z-index: 10;
+    z-index: 100;
 }
 
 .logo {
@@ -45,9 +54,9 @@ header {
 }
 
 nav a {
-    color: #dddddd;
+    color: #e2e6ec;
     text-decoration: none;
-    margin-left: 25px;
+    margin-left: 28px;
     transition: 0.2s;
 }
 
@@ -55,19 +64,20 @@ nav a:hover {
     color: #4da3ff;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     min-height: 620px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 60px 20px;
 
     background-image:
         linear-gradient(
-            rgba(5, 8, 15, 0.15),
+            rgba(5, 8, 15, 0.10),
             rgba(5, 8, 15, 0.65)
         ),
         url("./hero-macroforge.png");
@@ -77,53 +87,20 @@ nav a:hover {
     background-repeat: no-repeat;
 }
 
-/*
-   Görselin içinde zaten başlık ve açıklama bulunduğu için
-   HTML üzerindeki tekrarları göstermiyoruz.
-*/
+/* Görselin içinde zaten yazılar var */
 
 .hero h1,
-.hero p {
-    display: none;
-}
-
+.hero p,
 .hero .buttons {
     display: none;
 }
 
-/* BUTONLAR */
-
-.buttons {
-    margin-top: 35px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 15px 30px;
-    margin: 8px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    background: #1877f2;
-    color: #ffffff;
-    transition: 0.2s;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-.btn.secondary {
-    background: transparent;
-    border: 1px solid #4da3ff;
-    color: #4da3ff;
-}
-
-/* GENEL SECTION */
+/* =========================
+   SECTION
+========================= */
 
 section {
-    padding: 80px 8%;
+    padding: 80px 7%;
 }
 
 .section-title {
@@ -132,97 +109,360 @@ section {
     margin-bottom: 45px;
 }
 
-/* KARTLAR */
+/* =========================
+   KARTLAR
+========================= */
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 22px;
 }
 
 .card {
-    background: #101622;
-    border: 1px solid #222c3e;
-    border-radius: 12px;
+    background: #101722;
+
+    border: 1px solid #263247;
+
+    border-radius: 14px;
+
     padding: 30px;
+
     text-align: center;
-    transition: 0.2s;
+
+    transition: 0.25s;
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+
     border-color: #4da3ff;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.35);
 }
 
 .card h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
     color: #4da3ff;
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
 }
 
-/* FİYAT */
+.card p {
+    color: #c5ccd7;
+}
+
+/* =========================
+   FİYAT
+========================= */
 
 .price {
-    font-size: 32px;
+    font-size: 34px;
+
     font-weight: bold;
+
+    color: #ffffff;
+
     margin: 20px 0;
 }
 
-/* SATIN AL */
+/* =========================
+   BUTON
+========================= */
 
 .buy {
     display: inline-block;
+
+    border: none;
+
     background: #1877f2;
-    color: white;
+
+    color: #ffffff;
+
     text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 7px;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
     transition: 0.2s;
 }
 
 .buy:hover {
-    opacity: 0.9;
+    background: #3089ff;
+
     transform: translateY(-2px);
 }
 
-/* ÖZELLİKLER */
+.buy.bank {
+    background: #9a741b;
+
+    margin-top: 10px;
+}
+
+.buy.bank:hover {
+    background: #bd9227;
+}
+
+/* =========================
+   ÖZELLİKLER
+========================= */
 
 .features {
-    background: #0d111c;
+    background: #0d121d;
 }
 
 .feature {
     text-align: center;
+
     padding: 25px;
+}
+
+.feature-icon {
+    font-size: 42px;
+
+    margin-bottom: 15px;
 }
 
 .feature h3 {
     color: #4da3ff;
+
     margin-bottom: 10px;
 }
 
-/* DESTEK */
+/* =========================
+   DESTEK
+========================= */
 
 #iletisim {
     background: #080b12;
 }
 
-#iletisim .card p {
-    color: #c8ced9;
+.support-number {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    margin: 10px 0;
 }
 
-/* FOOTER */
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 9999;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(0, 0, 0, 0.78);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal-box {
+    width: 100%;
+
+    max-width: 520px;
+
+    background: #101722;
+
+    border: 1px solid #334157;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,0.65);
+
+    position: relative;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+}
+
+.modal-close {
+    position: absolute;
+
+    right: 18px;
+    top: 12px;
+
+    background: none;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+.modal-title {
+    color: #4da3ff;
+
+    font-size: 27px;
+
+    margin-bottom: 5px;
+}
+
+.selected-package {
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+}
+
+.payment-price {
+    color: #f0c34e;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.bank-box {
+    background: #0a0f18;
+
+    border: 1px solid #28364a;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    margin: 15px 0;
+}
+
+.bank-row {
+    margin-bottom: 12px;
+}
+
+.bank-label {
+    display: block;
+
+    color: #8997aa;
+
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+.bank-value {
+    color: #ffffff;
+
+    font-weight: bold;
+
+    word-break: break-all;
+}
+
+.iban-box {
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+}
+
+.copy-btn {
+    border: none;
+
+    background: #27364a;
+
+    color: #ffffff;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.copy-btn:hover {
+    background: #344861;
+}
+
+.warning {
+    background: rgba(154,116,27,0.12);
+
+    border: 1px solid #70581c;
+
+    border-radius: 8px;
+
+    padding: 14px;
+
+    margin: 18px 0;
+
+    color: #e7d49b;
+
+    font-size: 14px;
+}
+
+.modal-buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.whatsapp {
+    background: #168b45;
+}
+
+.whatsapp:hover {
+    background: #1ca956;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    background: #06080d;
+    background: #05070c;
+
     text-align: center;
+
     padding: 40px 20px;
-    color: #8992a3;
+
+    color: #8993a3;
 }
 
 footer a {
-    color: #8992a3;
+    color: #8993a3;
+
     text-decoration: none;
+
     margin: 0 10px;
 }
 
@@ -230,7 +470,9 @@ footer a:hover {
     color: #4da3ff;
 }
 
-/* MOBİL */
+/* =========================
+   MOBİL
+========================= */
 
 @media (max-width: 700px) {
 
@@ -247,8 +489,7 @@ footer a:hover {
     }
 
     .hero {
-        min-height: 500px;
-        padding: 30px 15px;
+        min-height: 430px;
 
         background-position: center;
     }
@@ -265,18 +506,29 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 
-    .price {
-        font-size: 28px;
+    .modal-box {
+        padding: 24px;
+    }
+
+    .iban-box {
+        align-items: stretch;
+
+        flex-direction: column;
     }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -307,19 +559,20 @@ footer a:hover {
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
-<section class="hero" id="anasayfa">
-
-    <!--
-        Hero görseli CSS background olarak kullanılıyor.
-        Görselin kendi yazıları tekrar gösterilmiyor.
-    -->
-
+<section
+    class="hero"
+    id="anasayfa"
+>
 </section>
 
 
-<!-- LİSANSLAR -->
+<!-- =========================
+     LİSANSLAR
+========================= -->
 
 <section id="lisanslar">
 
@@ -327,7 +580,9 @@ footer a:hover {
         Lisans Paketleri
     </h2>
 
+
     <div class="cards">
+
 
         <!-- 1 GÜN -->
 
@@ -345,9 +600,12 @@ footer a:hover {
                 ₺ 15
             </div>
 
-            <a href="#" class="buy">
-                Satın Al
-            </a>
+            <button
+                class="buy bank"
+                onclick="openPayment('1 Gün', '₺ 15')"
+            >
+                🏦 Havale / EFT ile Öde
+            </button>
 
         </div>
 
@@ -368,9 +626,12 @@ footer a:hover {
                 ₺ 100
             </div>
 
-            <a href="#" class="buy">
-                Satın Al
-            </a>
+            <button
+                class="buy bank"
+                onclick="openPayment('7 Gün', '₺ 100')"
+            >
+                🏦 Havale / EFT ile Öde
+            </button>
 
         </div>
 
@@ -391,9 +652,12 @@ footer a:hover {
                 ₺ 450
             </div>
 
-            <a href="#" class="buy">
-                Satın Al
-            </a>
+            <button
+                class="buy bank"
+                onclick="openPayment('30 Gün', '₺ 450')"
+            >
+                🏦 Havale / EFT ile Öde
+            </button>
 
         </div>
 
@@ -414,9 +678,12 @@ footer a:hover {
                 ₺ 1.100
             </div>
 
-            <a href="#" class="buy">
-                Satın Al
-            </a>
+            <button
+                class="buy bank"
+                onclick="openPayment('90 Gün', '₺ 1.100')"
+            >
+                🏦 Havale / EFT ile Öde
+            </button>
 
         </div>
 
@@ -437,37 +704,51 @@ footer a:hover {
                 ₺ 3.500
             </div>
 
-            <a href="#" class="buy">
-                Satın Al
-            </a>
+            <button
+                class="buy bank"
+                onclick="openPayment('365 Gün', '₺ 3.500')"
+            >
+                🏦 Havale / EFT ile Öde
+            </button>
 
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ÖZELLİKLER -->
+<!-- =========================
+     ÖZELLİKLER
+========================= -->
 
-<section class="features" id="ozellikler">
+<section
+    class="features"
+    id="ozellikler"
+>
 
     <h2 class="section-title">
         MacroForge Özellikleri
     </h2>
+
 
     <div class="cards">
 
 
         <div class="feature">
 
+            <div class="feature-icon">
+                ⚡
+            </div>
+
             <h3>
-                ⚡ Hızlı Macro
+                Süreli Tuşlama
             </h3>
 
             <p>
-                Belirlediğiniz tuşları istediğiniz
-                zaman aralıklarıyla çalıştırın.
+                Belirlediğiniz zaman aralıklarında
+                tuşları otomatik olarak çalıştırın.
             </p>
 
         </div>
@@ -475,13 +756,17 @@ footer a:hover {
 
         <div class="feature">
 
+            <div class="feature-icon">
+                🏹
+            </div>
+
             <h3>
-                🏹 Archer Combo
+                Archer Combo
             </h3>
 
             <p>
-                Archer/Rogue combo sistemi ile
-                işlemlerinizi kolaylaştırın.
+                Archer/Rogue combo sistemini
+                kolayca kullanın.
             </p>
 
         </div>
@@ -489,13 +774,17 @@ footer a:hover {
 
         <div class="feature">
 
+            <div class="feature-icon">
+                ❤️
+            </div>
+
             <h3>
-                ❤️ HP / Minor
+                HP / Minor
             </h3>
 
             <p>
-                HP ve Minor işlemlerini otomatik
-                olarak kontrol edin.
+                HP ve Minor işlemleri için
+                pratik kontrol seçenekleri.
             </p>
 
         </div>
@@ -503,13 +792,17 @@ footer a:hover {
 
         <div class="feature">
 
+            <div class="feature-icon">
+                ⌨️
+            </div>
+
             <h3>
-                ⌨️ Kısayollar
+                Kısayollar
             </h3>
 
             <p>
-                F9, F10, F11 ve acil durdurma
-                kısayollarını kullanın.
+                F8, F9, F10 ve F11 kısayolları
+                ile hızlı kontrol.
             </p>
 
         </div>
@@ -520,13 +813,16 @@ footer a:hover {
 </section>
 
 
-<!-- DESTEK -->
+<!-- =========================
+     DESTEK
+========================= -->
 
 <section id="iletisim">
 
     <h2 class="section-title">
         Destek
     </h2>
+
 
     <div class="cards">
 
@@ -536,10 +832,10 @@ footer a:hover {
         <div class="card">
 
             <h3>
-                📞 Telefon Desteği
+                📞 Telefon
             </h3>
 
-            <p>
+            <p class="support-number">
                 +90 553 017 02 18
             </p>
 
@@ -551,20 +847,20 @@ footer a:hover {
         <div class="card">
 
             <h3>
-                💬 WhatsApp Destek
+                💬 WhatsApp
             </h3>
 
             <p>
-                Konuşmaya müsait değilseniz,
-                WhatsApp üzerinden bize mesaj
-                bırakabilirsiniz.
+                Ödeme dekontunuzu ve lisans
+                talebinizi WhatsApp üzerinden
+                iletebilirsiniz.
             </p>
 
             <br>
 
             <a
+                class="buy whatsapp"
                 href="https://wa.me/905530170218"
-                class="buy"
                 target="_blank"
                 rel="noopener"
             >
@@ -579,7 +875,7 @@ footer a:hover {
         <div class="card">
 
             <h3>
-                📧 E-posta Desteği
+                📧 E-posta
             </h3>
 
             <p>
@@ -589,8 +885,8 @@ footer a:hover {
             <br>
 
             <a
-                href="mailto:gorgozmurat6@gmail.com"
                 class="buy"
+                href="mailto:gorgozmurat6@gmail.com"
             >
                 E-posta Gönder
             </a>
@@ -603,7 +899,169 @@ footer a:hover {
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     ÖDEME MODALI
+========================= -->
+
+<div
+    class="modal"
+    id="paymentModal"
+>
+
+    <div class="modal-box">
+
+
+        <button
+            class="modal-close"
+            onclick="closePayment()"
+        >
+            ×
+        </button>
+
+
+        <h2 class="modal-title">
+            Havale / EFT ile Ödeme
+        </h2>
+
+
+        <div
+            class="selected-package"
+            id="selectedPackage"
+        >
+        </div>
+
+
+        <div
+            class="payment-price"
+            id="selectedPrice"
+        >
+        </div>
+
+
+        <div class="bank-box">
+
+
+            <div class="bank-row">
+
+                <span class="bank-label">
+                    Banka
+                </span>
+
+                <span class="bank-value">
+                    Garanti BBVA
+                </span>
+
+            </div>
+
+
+            <div class="bank-row">
+
+                <span class="bank-label">
+                    Hesap Sahibi
+                </span>
+
+                <span class="bank-value">
+                    Murat Görgöz
+                </span>
+
+            </div>
+
+
+            <div class="bank-row">
+
+                <span class="bank-label">
+                    IBAN
+                </span>
+
+
+                <div class="iban-box">
+
+                    <span
+                        class="bank-value"
+                        id="ibanText"
+                    >
+                        TR44 0006 2000 2470 0006 8266 21
+                    </span>
+
+
+                    <button
+                        class="copy-btn"
+                        onclick="copyIBAN()"
+                    >
+                        IBAN'ı Kopyala
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="warning">
+
+            <strong>
+                Ödeme açıklaması:
+            </strong>
+
+            <br>
+
+            MacroForge - Paket - Ad Soyad
+
+            <br><br>
+
+            Örnek:
+
+            <br>
+
+            MacroForge - 30 Gün - Ahmet Yılmaz
+
+        </div>
+
+
+        <p style="color:#c5ccd7;">
+
+            Ödemeyi yaptıktan sonra dekontunuzu
+            WhatsApp üzerinden gönderin.
+            Ödeme kontrolünden sonra lisans
+            anahtarınız tarafınıza iletilecektir.
+
+        </p>
+
+
+        <div class="modal-buttons">
+
+
+            <a
+                class="buy whatsapp"
+                href="https://wa.me/905530170218"
+                target="_blank"
+                rel="noopener"
+            >
+                💬 Ödemeyi Yaptım - WhatsApp'tan Bildir
+            </a>
+
+
+            <button
+                class="buy"
+                onclick="closePayment()"
+            >
+                Kapat
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -628,5 +1086,86 @@ footer a:hover {
 </footer>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+/* =========================
+   ÖDEME PENCERESİ
+========================= */
+
+function openPayment(packageName, price) {
+
+    document.getElementById("selectedPackage").textContent =
+        "Seçilen Paket: " + packageName;
+
+    document.getElementById("selectedPrice").textContent =
+        price;
+
+    document.getElementById("paymentModal").style.display =
+        "flex";
+}
+
+
+/* =========================
+   KAPAT
+========================= */
+
+function closePayment() {
+
+    document.getElementById("paymentModal").style.display =
+        "none";
+}
+
+
+/* =========================
+   IBAN KOPYALA
+========================= */
+
+function copyIBAN() {
+
+    const iban =
+        "TR44 0006 2000 2470 0006 8266 21";
+
+    navigator.clipboard.writeText(iban)
+        .then(function() {
+
+            alert("IBAN kopyalandı.");
+
+        })
+        .catch(function() {
+
+            alert(
+                "IBAN: " + iban
+            );
+
+        });
+
+}
+
+
+/* =========================
+   MODAL DIŞINA TIKLAMA
+========================= */
+
+window.onclick = function(event) {
+
+    const modal =
+        document.getElementById("paymentModal");
+
+    if (event.target === modal) {
+
+        closePayment();
+
+    }
+
+};
+
+</script>
+
+
 </body>
+
 </html>
